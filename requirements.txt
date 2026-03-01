@@ -1,0 +1,47 @@
+# ── Web framework ─────────────────────────────────────────────────────────────
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+starlette==0.41.3
+
+# ── Config & validation ───────────────────────────────────────────────────────
+python-dotenv==1.0.1
+pydantic==2.10.3
+pydantic-settings==2.6.1
+
+# ── Database ──────────────────────────────────────────────────────────────────
+sqlalchemy[asyncio]==2.0.36
+asyncpg==0.30.0
+alembic==1.14.0
+psycopg2-binary==2.9.10
+# geoalchemy2==0.15.2  # optional — only if PostGIS is installed on DB server
+
+# ── AI ────────────────────────────────────────────────────────────────────────
+# Hazard classification — Llama 3.2 3B via Groq (openai SDK + base_url override)
+openai==1.58.1
+# LoopNav NL routing — Anthropic Claude
+anthropic==0.34.0
+
+# ── Graph & routing ───────────────────────────────────────────────────────────
+networkx==3.3
+scipy==1.14.1
+shapely==2.0.6
+
+# ── Caching ───────────────────────────────────────────────────────────────────
+redis[asyncio]==5.0.8
+
+# ── Rate limiting ─────────────────────────────────────────────────────────────
+slowapi==0.1.9
+
+# ── HTTP clients ──────────────────────────────────────────────────────────────
+httpx==0.28.1
+aiohttp==3.11.10
+certifi==2024.12.14
+
+# ── Serialization & helpers ───────────────────────────────────────────────────
+python-multipart==0.0.20
+orjson==3.10.12
+# Note: uuid is part of the Python standard library — no pip install needed
+
+# ── Testing ───────────────────────────────────────────────────────────────────
+pytest==8.3.4
+pytest-asyncio==0.24.0
