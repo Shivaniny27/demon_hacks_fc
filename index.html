@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accessible Chicago Routes - Hackathon</title>
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div id="map"></div>
+
+<input id="ai-prompt" type="text" placeholder="Try: Take me from Ogilvie to Art Institute, staying warm" />
+
+<div class="controls layer-toggles">
+  <div><button id="toggle-street">Street (1)</button><input type="range" id="opacity-street" min="0" max="1" step="0.05" value="1"></div>
+  <div><button id="toggle-mid">Mid (2)</button><input type="range" id="opacity-mid" min="0" max="1" step="0.05" value="1"></div>
+  <div><button id="toggle-pedway">Pedway (3)</button><input type="range" id="opacity-pedway" min="0" max="1" step="0.05" value="1"></div>
+</div>
+
+<div class="controls input-panel">
+  <select id="preset-origin"><option value="">Origin Preset</option><option value="-87.6388,41.8862">Ogilvie Station</option><option value="-87.6239,41.8781">Art Institute</option><option value="-87.6290,41.8840">Union Station</option><option value="-87.6240,41.8825">Millennium Park</option></select>
+  <select id="preset-dest"><option value="">Dest Preset</option><option value="-87.6388,41.8862">Ogilvie Station</option><option value="-87.6239,41.8781">Art Institute</option><option value="-87.6290,41.8840">Union Station</option><option value="-87.6240,41.8825">Millennium Park</option></select>
+  <input id="search-origin" placeholder="Search Origin (e.g. Ogilvie Station)" />
+  <input id="search-dest" placeholder="Search Dest (e.g. Art Institute)" />
+  <button id="swap-btn">Swap ↔</button>
+  <button id="navigate-btn">Navigate</button>
+  <button id="accessible-btn">♿ Accessible: Off</button>
+  <button id="lowstep-btn">Low-Step: Off</button>
+</div>
+
+<div id="route-panel" class="route-panel" style="display:none;"></div>
+<div id="spinner" class="spinner">Processing...</div>
+
+<script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
+<script src="https://unpkg.com/deck.gl@latest/dist.min.js"></script>
+<script src="https://unpkg.com/@deck.gl/mapbox@latest/dist.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
