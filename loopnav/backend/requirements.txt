@@ -1,0 +1,11 @@
+networkx
+scipy
+shapely
+requests
+geopandas
+fastapi
+uvicorn[standard]
+redis
+python-dotenv
+slowapi
+aiohttp
